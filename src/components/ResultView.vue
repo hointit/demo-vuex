@@ -1,13 +1,17 @@
 <template>
-    <h1>{{ msg }}</h1>
+  <div class="hello">
+    <h3>Counter: {{ appCounter }}</h3>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
+  name: 'ResultView',
+  computed: {
+    appCounter: function() {
+      return this.$store.getters.getCounter
+    }
+  },
 }
 </script>
 
